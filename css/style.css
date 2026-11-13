@@ -1,0 +1,39 @@
+.colors{
+width: 60%;
+margin:0 auto;
+align-items: center;
+
+justify-content: center;
+}
+.bg-green{
+background-color: green;
+color: wheat;
+}
+.bg-yellow{
+background-color: yellow;
+color: brown;
+}
+.bg-red{
+background-color: rgb(255, 0, 149);
+color: wheat;
+}
+.bg-blue{
+background-color: rgb(8, 100, 112);
+color: yellowgreen;
+}
+.bg-orange{
+background-color: orange;
+color: wheat;
+}
+.bg-teal{
+background-color: teal;
+color: wheat;
+}
+.pink{
+background-color: pink;
+color: rgb(106, 72, 9);
+}
+.gold:hover{
+background-color: gold;
+color: cornflowerblue;
+}

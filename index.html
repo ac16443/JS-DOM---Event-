@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Document Object Model</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="JS/script.js" defer></script>
+</head>
+
+<body>
+    <h1 id="title">DOM</h1>
+    <h2> DOM Selectors</h2>
+    <ul id="list" class="colors">
+        <li id="byId" class="bg-green">getElementsById('byId'): returns singleHTML element when the element id match
+            with the Id or null: (Element not A list)</li>
+        <li id="query" class="bg-yellow">querySelector("#query"): returns The first element || Null: (Element Not a
+            list)</li>
+        <li id="yellow" class="bg-yellow">querySelectorAll("#query"): returns Node List of all Matching element </li>
+        <li id="byId" class="bg-green">getElementsById('byId'): returns singleHTML element when the element id match
+            with the Id or null</li>
+        <li id="red" class="bg-red">getElementsByTagName('li'): returns HTML Collections Matching elements || empty []
+            (Live => auto update when Dom change)
+        </li>
+        <li id="blue" class="bg-blue">getElementsByClassName('li'):returns HTML Collections Matching elements || empty
+            :(Live => auto update when Dom change)
+            []</li>
+        <li id="orange" class="bg-orange">getElementsByTagName('li'): returns HTML Collections Matching elements ||
+            empty (Live => auto update when Dom change)</li>
+        <li id="byId" class="bg-green">getElementsById('byId'): returns singleHTML element when the element id match
+            with the Id or null</li>
+        <li id="query" class="bg-teal">jquery:$("#byId")</li>
+    </ul>
+<hr/>
+<div class="hello">
+  <ul id="fruitId" class="hello">
+    <li id="one" class="red">Apple</li>
+    <li id="two" class="yellow">Mango</li>
+    <li id="three" class="red">Peach</li>
+  </ul>
+</div>
+
+
+    <hr />
+    <hr />
+     <h2>Update Attributes</h2>
+      <input type="text"  id="fName"/>
+
+    <img id="myBirds"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhCvIIBGsK_xpL0AjN8CoSDGq8uczE1vI6Ynv8z3eWdA&s=10"
+        alt="angry birds" />
+
+    <!-- Propagation Event bubbling -->
+    <div id="card">
+        <a id="link" href="#details">View details</a>
+    </div>
+    <p id="details">Details.</p>
+
+    <!-- <script type="text/javascript" src="JS/script.js" defer></script> -->
+</body>
+
+</html>
