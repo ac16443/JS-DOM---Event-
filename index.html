@@ -7,21 +7,52 @@
     <title>DOM-Document Object Model</title>
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="JS/script.js" defer></script>
+    <!-- <script type="text/javascript" src="JS/js-form.js" defer></script> -->
 </head>
 
 <body>
     <h1 id="title">DOM</h1>
+    <input type="number" id="counter" name="counter" />
+    <button id="btn-count">check event</button>
+    <form id="loginForm">
+        <input type="email" name="my-email" id="my-email" />
+        <button type="submit">myEmail</button>
+    </form>
+
+    <form id="signupForm">
+        <input id="email" type="email" placeholder="Email address">
+        <button type="submit">Sign up</button>
+    </form>
+    <p id="message"></p>
+   <hr />
+<div id="form-container"> 
+<form id="myForm" novalidate>  
+<label for="full-name">Full Name</label>
+<input id="full-name" type="text" placeholder="Your Full Name" >
+
+<label for="email">Full Name</label>
+<input id="email" type="email" placeholder="Your Full Name" >
+ 
+<button type="submit">Sign UP</button>
+</form>
+
+<p id="message" role="status"></p>
+</div>
+
+   <hr />
+
+    <hr />
     <h2> DOM Selectors</h2>
     <ul id="list" class="colors">
         <li id="byId" class="bg-green">getElementsById('byId'): returns singleHTML element when the element id match
             with the Id or null: (Element not A list)</li>
         <li id="query" class="bg-yellow">querySelector("#query"): returns The first element || Null: (Element Not a
-            list)</li>
+            list)</li>s Matching elements || empty []
+            (Live => auto update when Dom change)
         <li id="yellow" class="bg-yellow">querySelectorAll("#query"): returns Node List of all Matching element </li>
         <li id="byId" class="bg-green">getElementsById('byId'): returns singleHTML element when the element id match
             with the Id or null</li>
-        <li id="red" class="bg-red">getElementsByTagName('li'): returns HTML Collections Matching elements || empty []
-            (Live => auto update when Dom change)
+        <li id="red" class="bg-red">getElementsByTagName('li'): returns HTML Collection
         </li>
         <li id="blue" class="bg-blue">getElementsByClassName('li'):returns HTML Collections Matching elements || empty
             :(Live => auto update when Dom change)
@@ -32,32 +63,45 @@
             with the Id or null</li>
         <li id="query" class="bg-teal">jquery:$("#byId")</li>
     </ul>
-<hr/>
-<div class="hello">
-  <ul id="fruitId" class="hello">
-    <li id="one" class="red">Apple</li>
-    <li id="two" class="yellow">Mango</li>
-    <li id="three" class="red">Peach</li>
-  </ul>
-</div>
-
+    <hr />
+    <div class="hello">
+        <ul id="fruitId" class="hello">
+            <li id="one" class="red">Apple</li>
+            <li id="two" class="yellow">Mango</li>
+            <li id="three" class="red">Peach</li>
+        </ul>
+    </div>
+    <hr />
 
     <hr />
-    <hr />
-     <h2>Update Attributes</h2>
-      <input type="text"  id="fName"/>
+<div><h2>Update Attributes</h2>
+    <input type="text" id="fName" />
 
     <img id="myBirds"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhCvIIBGsK_xpL0AjN8CoSDGq8uczE1vI6Ynv8z3eWdA&s=10"
         alt="angry birds" />
 
+</div>
+
+    
     <!-- Propagation Event bubbling -->
+<h2>Event Propagation</h2>
+<div id="container"> 
+Hello from container <a href="https://javascript.info/bubbling-and-capturing">Link</a>
+<fom action=" " class="msg-form"> 
+This is your msg
+<button class="btn-msg">msg-btn</button>
+</form>
+</div>
+
+
     <div id="card">
         <a id="link" href="#details">View details</a>
     </div>
     <p id="details">Details.</p>
 
+
     <!-- <script type="text/javascript" src="JS/script.js" defer></script> -->
 </body>
 
-</html>
+</html> 

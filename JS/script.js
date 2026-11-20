@@ -1,3 +1,6 @@
+window.addEventListener("resize", () => {
+      console.log("Current width:", window.innerWidth);
+    });
 /** Selecting */
 let body = (document.body.style.backgroundColor = "#7ac1d1");
 //console.log(body);
@@ -21,9 +24,20 @@ ul.appendChild(newList);
 //console.log("10th List", newList);
 //console.log("Static", staticList.length, staticList);
 //console.log("live", liveList.length, liveList);
+// function updateStyle(){
+// liveList.style.color = 'purple';
+// liveList.style.backgroundColor = 'lavender';
+// }
 Array.from(liveList).forEach((item, index) => {
   item.style.border = "2px solid gray";
-  //.style.padding = '20px' ;
+  item.style.padding = '20px' ;
+  
+  item.addEventListener('mouseover', ()=>{
+        item.style.width = '700';
+        item.style.color = 'purple';
+        item.style.backgroundColor = 'lavender';
+console.log(item);
+})
 
   //console.log("loop each", item);
 });
@@ -91,7 +105,7 @@ two.textContent = "Banana";
  newUl.removeChild(two);
 //console.log("check HTML", newUl);
 //newUl.innerHTML;    // the <li> tags, as a string
-newUl.innerHTML = "<li >Kiwi</li>";
+//newUl.innerHTML = "<li >Kiwi</li>";
  //const two = document.getElementById("two");
 //newUl.removeChild(two);   // Mango is gone
 // modern shortcut: two.remove();
@@ -121,11 +135,62 @@ input.classList.toggle("active");
 let myImg = document.getElementById("myBirds");
 myImg.src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRE3Vz26cAcz_ZpI0DXhAWsciSEg2el9VSws3te-lEeQ&s=10';
 myImg.alt = "chalk, Red , bomb"
-myImg.width = 400;
-myImg.height = 400;
+myImg.width = "400";
+myImg.height = "400";
 //console.log(myImg);
+/*** Event ************/
+
+/**Form 1 */
+let btnCount = document.getElementById('btn-count');
+let inputCounter = document.getElementById('counter')
+
+
+inputCounter.addEventListener("keydown", (e) => console.log("Pressed: " + e.key));
+btnCount.addEventListener("click", (e) => console.log(e.value));
+
+const form = document.getElementById("signupForm");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+console.log("Form", form);
+form.addEventListener("submit", function (event) {
+  if (email.value.trim() === "") {
+    event.preventDefault();          // don't submit
+    email.style.borderColor = "red";
+    message.textContent = "Email is required";
+  }
+});
+
+//**Form 1 */
+let form1 = document.getElementById('loginForm');
+let input1 = document.getElementById('my-email');
+ form.addEventListener('click', (e)=>{
+let val = input1.value.trim();
+console.log("Value=>", val)
+return val;
+})
 
 //*******  Propagation bubbling //preventDefault(); stopPropagation() *******//
+let parentDiv = document.querySelector('#container');
+let formMsg = document.querySelector(".msg-form");
+let btnMsg = document.querySelector(".btn-msg")
+parentDiv.addEventListener("click", (e)=>{
+console.log("From container div");
+console.log("captur flow 1");
+}, {capture:true});
+formMsg.addEventListener("click", (e)=>{
+console.log("From Message Form", e);
+console.log("captur flow 2");
+}, {capture:true})
+btnMsg.addEventListener("click", (e)=>{
+console.log("Message Button ");
+console.log("captur flow 3");
+e.stopPropagation();
+e.preventDefault();
+}, {capture:true})
+
+
+
+
 const card = document.getElementById("card");
 const link = document.getElementById("link");
 
@@ -140,47 +205,3 @@ link.addEventListener("click", function (event) {
   event.preventDefault();
 });
 
-// const btn = document.getElementById("missing");
-// console.log(btn, "missing idby ID");
-
-// if (button === null) {
-//   console.log("Button was not found");
-// }
-
-//preventDefault();
-//stopPropagation() => to stop reload
-/**
-1.Select an element 
-2.bind event
-3.attach script
-
-assignment
-login form validation
-if empty throw error when you click submit
-check value
-
-Pseudo code
--declar an array variable to hold error msgs
--check the input values check if its empty
-- use value property to check to get value
--if empty trow error msg
--use innerHTML on errorDisplay
--use getElementById() to select
--check the input val < 5 char
--get value by using value property
--if value less than 5 char trow error
--error msg
--innerHTML on errorDisplay
--select by ID
--submit if there is no error
--else stop default behavior or html for submitting the form
--use preventDefault();
-
- */
-1;
-
-// let a = 7;
-// let x = a;
-// a =2
-// console.log(a);
-// console.log(x);

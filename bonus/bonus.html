@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Group exercise  -->
+<h2>Question 1: Radio Button selection</h2>
+<div> 
+<h3> Choose the color you want!</h3>
+<input type="radio" name="color" value="blue" ><label>Blue</label><br>
+<input type="radio" name="color" value="green" ><label>Green</label><br>
+<input type="radio" name="color" value="purple" ><label>Purple</label><br>
+<input type="radio" name="color" value="yellow" ><label>Yellow</label><br>
+<input type="radio" name="color" value="black" ><label>Black</label><br>
+<input type="radio" name="color" value="white" ><label>white</label>
+</div>
+<h2>Question 2: Counter Button</h2>
+<div> 
+<button type="button" id="increase" >+</button> 
+<span id="countVal"></span>
+<button type="button" id="decrease" >-</button>
+</div>
+<h2>Question 3: Login Form</h2>
+<div>
+<form id="loginForm"> 
+<label>Full Name</label> <input type="text" value="" id="fName"   placeholder="Full Name" > <br><br>
+<!-- use required attribute  -->
+<label>Password</label> <input type="password" value="" id="pass"  placeholder="*****"><br>
+<Button type="submit">Submit</Button>
+</form>
+<p id="statusMsg"></p>
+</div>
+
+<script>
+//Q1
+let radios =document.getElementsByName('color');
+console.log(radios);
+radios.forEach((item)=>{
+item.addEventListener('change', (e)=>{
+//const selected = e.target.value;
+const selected = item.value;
+    console.log(selected);
+document.body.style.backgroundColor = selected;
+
+})
+})
+
+//Q2
+let increase = document.getElementById('increase');
+let decrease = document.getElementById('decrease');
+let counter = document.getElementById('countVal');
+let count = 0;
+function updateCount(e){
+if(e.target === increase && count < 20){
+    count += 1;
+ console.log("up", count);
+}else if(e.target === decrease && count > 0) {
+count -= 1 ;
+console.log("down", count);
+}
+    counter.style.color = 'orange';
+return counter.textContent = count;
+}
+
+increase.addEventListener("click", updateCount)
+
+decrease.addEventListener("click", updateCount)
+
+//Q3
+let form = document.getElementById('loginForm');
+let name = document.getElementById('fName');
+let pass = document.getElementById('pass');
+let status = document.getElementById('statusMsg');
+ 
+let submitHandler =(e)=>{
+e.preventDefault();
+ let nameVal= name.value.trim();
+let pw = pass.value.trim();
+
+if(nameVal === "" || pw === ""){
+name.style.backgroundColor = 'pink';
+pass.style.backgroundColor = 'pink';
+return
+}
+if(typeof nameVal === 'string' || typeof pass === 'string'){
+console.log('Name:', nameVal);
+console.log("pass:", pw);
+status.style.color = 'orange';
+status.textContent = "Submitted!!! ... Thank You!";
+form.style.display= 'none';
+
+}
+}
+form.addEventListener('submit', submitHandler);
+
+</script>
+</body>
+</html>
+

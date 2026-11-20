@@ -14,7 +14,7 @@ background-color: yellow;
 color: brown;
 }
 .bg-red{
-background-color: rgb(255, 0, 149);
+background-color: rgb(232, 188, 214);
 color: wheat;
 }
 .bg-blue{
@@ -36,4 +36,28 @@ color: rgb(106, 72, 9);
 .gold:hover{
 background-color: gold;
 color: cornflowerblue;
+}
+#container{
+width:300px;
+height:200px;
+color:wheat;
+background-color: purple;
+display: block;
+}
+a{
+background-color: darkseagreen;
+}
+
+.msg-form{
+background-color: fuchsia;
+color: wheat;
+width:200px;
+height:150px;
+display:block;
+}
+.btn-msg{
+background-color: plum;
+color:cornsilk;
+width:100px;
+height:100px;
 }
